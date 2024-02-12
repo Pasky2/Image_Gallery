@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Handlee&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: 'Protest Revolution', sans-serif;
+}
+
+.container {
+  display: flex;
+  place-content: center;
+  align-items: center;
+  min-height: 90vh;
+  transform-style: preserve-3d;
+}
+
+.title-container {
+  color: #fff;
+  margin-top: 40px;
+  /* display: flex; */
+  text-align: center;
+}
+
+.box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: 1.5s;
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.box span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+  -webkit-box-reflect: below 0px
+    linear-gradient(transparent, transparent, #0004);
+}
+
+.box span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.zoom {
+  transform: scale(1.5, 1.5);
+  transition: all 1.5s;
+}
+
+.btns {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  gap: 30px;
+}
+
+.btns .btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btns .btn:active {
+  background: #fff;
+}
+
+.btns .btn::before {
+  /* content: ''; */
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  /* border-top: 2px solid #fff; */
+  /* border-right: 2px solid #fff; */
+  transform: rotate(45deg) translate(-25px, 2.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns .btn.prev::before {
+  transform: rotate(225deg) translate(-2.5px, 2.5px);
+}
+
+/* .btns .btn:active::before {
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+} */
+
+.btns .btn i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.btns .btn:active i {
+  color: #000;
+}
