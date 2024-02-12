@@ -57,7 +57,7 @@ body {
   user-select: none;
 }
 
-.zoom {
+.image:hover {
   transform: scale(1.5, 1.5);
   transition: all 1.5s;
 }
@@ -86,12 +86,9 @@ body {
 }
 
 .btns .btn::before {
-  /* content: ''; */
   position: absolute;
   width: 10px;
   height: 10px;
-  /* border-top: 2px solid #fff; */
-  /* border-right: 2px solid #fff; */
   transform: rotate(45deg) translate(-25px, 2.5px);
   display: flex;
   justify-content: center;
